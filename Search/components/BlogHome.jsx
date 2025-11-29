@@ -282,7 +282,7 @@ function BlogHome() {
             
             const stext = passRegExp(debouncedSearchedTerm);
             const regex = new RegExp(`\\b(${stext})\\b`, "gi");
-            document.getElementById("post-number").style.display = "flex";
+           
             return text.split(regex).map((part, index) =>
             part.toLowerCase() === debouncedSearchedTerm.toLowerCase()
             ? <span key={index} className='mark-up'>{part}</span> : part
@@ -291,6 +291,24 @@ function BlogHome() {
     );
      
     };
+
+    function handleEmpty(){
+      
+      if(filteredPosts.length === 0){
+         document.getElementById("post-number").style.display = "flex";
+        return " Post not found"
+      }
+      
+      if(filteredPosts.length > 1){
+         document.getElementById("post-number").style.display = "flex";
+        return filteredPosts.length + " Posts found"
+      }
+      else{
+         document.getElementById("post-number").style.display = "flex";
+        return filteredPosts.length + " Post found"
+      }
+      
+    }
   return (
     <div className='main'>
       <header>
@@ -358,7 +376,11 @@ function BlogHome() {
 
         <div className='posts-section'>
          <div id='post-number'>
-          <label> { filteredPosts.length > 1 ? filteredPosts.length + " posts found" : filteredPosts.length + " post found"} </label>  
+          <label>
+             {handleEmpty()}
+             
+          </label>  
+
         </div>
         { filteredPosts.map(post =>( 
           <div key={post.id}>
