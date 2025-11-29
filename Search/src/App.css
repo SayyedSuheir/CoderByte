@@ -50,6 +50,7 @@ header {
 .header-search-input input {
   width: 80%;
   box-shadow: rgba(151, 154, 157, 0.2) 0px 8px 24px;
+  margin-top: 5%;
 }
 
 /* ========= Card Footer & Links ========= */
@@ -103,4 +104,7 @@ header {
 /* ========= Utilities ========= */
 #post-number {
   display: none;
+  padding-bottom: 5%;
+  font-size: larger;
+  font-weight: 700;
 }
