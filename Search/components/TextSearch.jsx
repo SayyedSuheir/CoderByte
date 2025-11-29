@@ -15,7 +15,8 @@ function TextSearch({value, onChange}) {
           placeholder='search here'
           />
           </div>
-          <div className='clear-search-svg'>
+          {value && (
+          <div className='clear-search-svg' onClick={()=> onChange("")}>
            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"  viewBox="0 0 122.881 122.88" enable-background="new 0 0 122.881 122.88" xml:space="preserve">
             <g>
               <path fill-rule="evenodd" 
@@ -25,6 +26,7 @@ function TextSearch({value, onChange}) {
             </g>
            </svg>
           </div>
+          )}
       </div>
     </div>
   )
