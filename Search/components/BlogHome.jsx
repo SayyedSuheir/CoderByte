@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useRef} from 'react'
 import {useDebounce} from 'react-use'
 import TextSearch from './TextSearch'
 import { Card, Button } from 'react-bootstrap';
@@ -291,20 +291,22 @@ function BlogHome() {
     );
      
     };
+    const showNotification = debouncedSearchedTerm.length > 0;
 
     function handleEmpty(){
-      
+     
+     
       if(filteredPosts.length === 0){
-         document.getElementById("post-number").style.display = "flex";
-        return " Post not found"
+         
+        return  " Post not found";
       }
       
       if(filteredPosts.length > 1){
-         document.getElementById("post-number").style.display = "flex";
+        
         return filteredPosts.length + " Posts found"
       }
       else{
-         document.getElementById("post-number").style.display = "flex";
+         
         return filteredPosts.length + " Post found"
       }
       
@@ -375,13 +377,15 @@ function BlogHome() {
       </header>
 
         <div className='posts-section'>
-         <div id='post-number'>
-          <label>
-             {handleEmpty()}
-             
-          </label>  
+        {showNotification && (
+            <div className='post-number'>
+              <label>
+                {handleEmpty()}
+                
+              </label>  
 
-        </div>
+            </div>
+        )}
         { filteredPosts.map(post =>( 
           <div key={post.id}>
             

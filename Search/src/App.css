@@ -1,4 +1,12 @@
+/* ========= Utilities ========= */
+.post-number {
+  display: flex;
+  padding-bottom: 5%;
+  font-size: larger;
+  font-weight: 700;
+}
 /* ========= Base Layout ========= */
+
 *,
 *::before,
 *::after {
@@ -24,14 +32,16 @@ body {
 header {
   display: flex;
   width: 100%;
+ 
+  gap:2%;
 }
 
 .search-section {
-  width: 60%;
+  width: 65%;
 }
 
 .search-card {
-  width: 40%;
+  width: 35%;
 }
 
 /* ========= Search ========= */
@@ -45,17 +55,41 @@ header {
   font-size: 1.5rem;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
+  height:15vh;
 }
-
-.header-search-input input {
-  width: 80%;
+.header-search-input{
+  display: flex;
+  width: 100%;
   box-shadow: rgba(151, 154, 157, 0.2) 0px 8px 24px;
-  margin-top: 5%;
+}
+.search-input  {
+  width: 90%;
+ 
+ 
  
   font-size: 1rem !important;
   font-weight: 700;
 }
+.search-input input{
+   
+ border:none;
+ width: 100%;
+  font-size: 1rem !important;
+  font-weight: 700;
+  
 
+}
+.clear-search-svg{
+  width:10%;
+ display: flex;
+ align-items: center;
+ 
+
+}
+.clear-search-svg svg{
+ width:30%;
+ cursor: pointer;
+}
 /* ========= Card Footer & Links ========= */
 .card-footer {
   width: 100%;
@@ -104,10 +138,3 @@ header {
   border-radius: 3px;
 }
 
-/* ========= Utilities ========= */
-#post-number {
-  display: none;
-  padding-bottom: 5%;
-  font-size: larger;
-  font-weight: 700;
-}
