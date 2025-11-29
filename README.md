@@ -23,8 +23,10 @@ A React blog search application with debounced search, highlighted results, and 
     npm install
 ## Running the App
 
-Start the development server:
-  npm run dev
+## Start the development server:
+    npm run dev
+
+
 //The app will be available at http://localhost:5173 (default Vite port).
 
 
