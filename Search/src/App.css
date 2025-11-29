@@ -61,6 +61,7 @@ header {
   display: flex;
   width: 100%;
   box-shadow: rgba(151, 154, 157, 0.2) 0px 8px 24px;
+  border: 2px solid black;
 }
 .search-input  {
   width: 90%;
@@ -79,15 +80,19 @@ header {
   
 
 }
+.search-input input:focus{
+
+ outline: none;
+}
 .clear-search-svg{
   width:10%;
  display: flex;
- align-items: center;
+ justify-content: end;
  
 
 }
 .clear-search-svg svg{
- width:30%;
+ width:20%;
  cursor: pointer;
 }
 /* ========= Card Footer & Links ========= */
