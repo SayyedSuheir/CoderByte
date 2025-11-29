@@ -1,0 +1,17 @@
+body{
+    width: 100%;
+    background-color: lightgray;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: inset;
+}
+.mark-up {
+  background-color: #c5ffb2; /* light orange */
+  border-radius: 3px;
+  padding: 0 2px;
+}
+#post-number{
+    display: none;
+}
