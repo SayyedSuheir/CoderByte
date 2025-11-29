@@ -1,16 +1,56 @@
 body{
+    margin:0;
+    padding: 0;
     width: 100%;
     background-color: lightgray;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: inset;
+   
+    
+}
+#root{
+  padding: 5%;
+}
+header{
+  display: flex;
+  width:100%;
+
+}
+.search-section{
+  width:60%;
+}
+.search-card{
+  width:40%;
+}
+.textsearch{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+}
+.header-search-title{
+  font-size: 1.5rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
+  font-weight: 700;
+}
+.header-search-input input{
+  width:80%;
+  box-shadow: rgba(151, 154, 157, 0.2) 0px 8px 24px;
+}
+.links svg{
+  width:24px;
+  height: 24px;
+}
+.posts-section{
+
+  padding-top: 5%;
+  
 }
 .mark-up {
   background-color: #c5ffb2; /* light orange */
   border-radius: 3px;
-  padding: 0 2px;
+  
 }
 #post-number{
     display: none;

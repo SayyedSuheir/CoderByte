@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import {useDebounce} from 'react-use'
 import TextSearch from './TextSearch'
+import { Card, Button } from 'react-bootstrap';
 
 function BlogHome() {
     const posts = [
@@ -291,20 +292,74 @@ function BlogHome() {
      
     };
   return (
-    <div>
-        <TextSearch value={searchedText} onChange={setSearchedText}/>
+    <div className='main'>
+      <header>
+        <div className='search-section'>
+          <TextSearch value={searchedText} onChange={setSearchedText}/>
+        </div>
+        <div className='search-card'>
+          <Card >
+            <Card.Body>
+              <Card.Title>CoderByte</Card.Title>
+              
+              <Card.Text>
+                is an online platform used to practice coding, prepare for technical interviews, and assess programming skills.
+              </Card.Text>
+              <Card.Link href="https://x.com/coderbyte">
+              <Button className='links'>
+                <svg xmlns="http://www.w3.org/2000/svg" display="block" role="presentation" viewBox="0 0 20 20">
+                  <defs>
+                    <linearGradient id="P94mHTZeM-1895101284-linear-gradient" x1="0" x2="1" y1="0.4975124378109453" y2="0.5024875621890547">
+                    <stop offset="0" stop-color="rgb(46, 209, 166)"/>
+                    <stop offset="0.4964946557866911" stop-color="rgb(32, 122, 249)"/>
+                    <stop offset="1" stop-color="rgb(128, 0, 255)"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M 15.575 0.001 L 10.579 5.712 L 6.259 0.001 L 0 0.001 L 7.477 9.777 L 0.391 17.875 L 3.425 17.875 L 8.894 11.627 L 13.674 17.875 L 19.775 17.875 L 11.982 7.572 L 18.607 0 L 15.574 0 Z M 14.511 16.061 L 3.542 1.72 L 5.345 1.72 L 16.191 16.06 L 14.511 16.06 Z" 
+                  fill="url(#P94mHTZeM-1895101284-linear-gradient)"
+                   height="15px" id="P94mHTZeM" transform="translate(0 1)" width="15px"
+                   />
+                </svg>
+                X link
+              </Button>
+              </Card.Link>
+              <Card.Link href="https://www.linkedin.com/company/coderbyte/">
+              <Button className='links'>
+                <svg xmlns="http://www.w3.org/2000/svg" display="block" role="presentation" viewBox="0 0 20 20" >
+                <defs><linearGradient id="SfCFwPjtW-2411860657-linear-gradient" x1="0" x2="1" y1="0.4975124378109453" y2="0.5024875621890547">
+                <stop offset="0" stop-color="rgb(46, 209, 166)"/>
+                <stop offset="0.4739935247747748" stop-color="rgb(32, 122, 249)"/>
+                <stop offset="1" stop-color="rgb(128, 0, 255)"/></linearGradient>
+                </defs>
+                <path
+                 d="M 15.336 15.339 L 12.671 15.339 L 12.671 11.162 C 12.671 10.166 12.651 8.884 11.281 8.884 C 9.892 8.884 9.68 9.968 9.68 11.089 L 9.68 15.339 L 7.014 15.339 L 7.014 6.75 L 9.574 6.75 L 9.574 7.92 L 9.609 7.92 C 9.967 7.246 10.837 6.533 12.137 6.533 C 14.837 6.533 15.337 8.311 15.337 10.624 L 15.337 15.339 Z M 4.004 5.575 C 3.593 5.576 3.199 5.412 2.908 5.122 C 2.618 4.831 2.455 4.437 2.456 4.026 C 2.457 3.171 3.15 2.478 4.005 2.479 C 4.86 2.48 5.553 3.173 5.552 4.028 C 5.551 4.883 4.858 5.576 4.003 5.575 Z M 5.34 15.339 L 2.667 15.339 L 2.667 6.75 L 5.34 6.75 Z M 16.67 0 L 1.33 0 C 0.594 0 0 0.58 0 1.297 L 0 16.703 C 0 17.42 0.594 18 1.328 18 L 16.667 18 C 17.4 18 18 17.42 18 16.703 L 18 1.297 C 18 0.581 17.4 0 16.666 0 L 16.669 0 Z" 
+                 fill="url(#SfCFwPjtW-2411860657-linear-gradient)"
+                  height="15px" id="SfCFwPjtW" transform="translate(1 1)" width="15px"
+                  />
+                </svg>
+                LinkedIn link
+              </Button>
+              </Card.Link>
+            </Card.Body>
+          </Card>
+         
+        </div>  
+
+        
+      </header>
+
         <div className='posts-section'>
          <div id='post-number'>
           <label> { filteredPosts.length > 1 ? filteredPosts.length + " posts found" : filteredPosts.length + " post found"} </label>  
         </div>
         { filteredPosts.map(post =>( 
-        <div key={post.id}>
-          
-            <h3 className='post-title'>{markText(post.title)}</h3>
-            <h5 className='post-date'>{post.date}</h5>
-            <p className='post-body'>{markText(post.body)}</p>
+          <div key={post.id}>
+            
+              <h3 className='post-title'>{markText(post.title)}</h3>
+              <h5 className='post-date'>{post.date}</h5>
+              <p className='post-body'>{markText(post.body)}</p>
 
-        </div>
+          </div>
         ))} 
         </div>
     </div>
